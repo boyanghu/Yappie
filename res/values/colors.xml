@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="primary_background">#EB6841</color>
+	<color name="primary_background_highlight">#DC5A37</color>
+	<color name="secondary_background">#2F4149</color>
+	<color name="secondary_background_transparent">#662F4149</color>
+	<color name="secondary_background_highlight">#20323F</color>
+	<color name="white">#fff</color>    
+</resources>
