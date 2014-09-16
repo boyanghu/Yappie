@@ -1,61 +1,54 @@
 package com.bo.yang.hu.yappie;
 
-import android.os.Bundle;
-import com.facebook.*;
-import com.facebook.model.*;
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.widget.TextView;
+
+import com.bo.yang.hu.yappie.ui.LogonFragment;
+import com.bo.yang.hu.yappie.ui.LogonFragment.LogonFragmentListener;
+import com.facebook.Session;
 
 public class MainActivity extends Activity {
 
 	private static final String TAG = MainActivity.class.getSimpleName();
 
-	private TextView exampleTV;
-	private Session facebookSession;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		//initializeUIElements();
-		//makeInitialFacebookCall();
+		showLogonFragment();
 	}
 
-	private void displayUserID(Session session) {
-		if (facebookSession.isOpened()) {
-			Request.newMeRequest(facebookSession, new Request.GraphUserCallback() {
+	private void showLogonFragment() {
+		if (!(getCurrentlyDisplayedFragment() instanceof LogonFragment)) {
+			showFragment(LogonFragment.create(new LogonFragmentListener() {
 
-				  @Override
-				  public void onCompleted(GraphUser user, Response response) {
-					  exampleTV.setText(user.getName() + " UserID: " + user.getId()); 
-				  }
-				}).executeAsync();
+				@Override
+				public void onLogonSuccessful(Session session) {
+					Log.d(TAG, "Logon successful");
+
+				}
+
+				@Override
+				public void onLogonFailed() {
+					Log.e(TAG, "Logon failed");
+				}
+			}));
 		}
 	}
 
-	private void makeInitialFacebookCall() {
-		Session.openActiveSession(this, true, new Session.StatusCallback() {
-			@Override
-			public void call(Session session, SessionState state, Exception exception) {
-				if (exception != null) {
-					Log.e(TAG, "Exception thrown: " + exception.getLocalizedMessage());
-				} else if (state != null) {
-					Log.d(TAG, "SessionState: " + state.toString());
-				}
-				if (session.isOpened()) {
-					Log.d(TAG, "Session is open");
-					facebookSession = session;
-					displayUserID(session);
-				}
-			}
-		});
+	private Fragment getCurrentlyDisplayedFragment() {
+		return getFragmentManager().findFragmentById(R.id.fragment_container);
 	}
 
-	private void initializeUIElements() {
-		//exampleTV = (TextView) findViewById(R.id.example_text);
+	private void showFragment(Fragment fragment) {
+		FragmentTransaction transaction = getFragmentManager().beginTransaction();
+		transaction.replace(R.id.fragment_container, fragment);
+		transaction.commit();
 	}
 
 	@Override

@@ -5,5 +5,10 @@
     <string name="app_name">Yappie</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="logo_description">logo</string>
+    <string name="logon_status_placeholder">Beginning logon, please, wait for some shit to happen</string>
+    <string name="attempting_logon">Attemption Logon</string>
+    <string name="logon_successful">Logon Successful</string>
+    <string name="logon_failed">Logon Failed</string>
 
 </resources>

@@ -214,7 +214,7 @@ containing a value of this type.
         public static final int com_facebook_list_section_header_background=0x7f02000d;
         public static final int com_facebook_loginbutton_silver=0x7f02000e;
         public static final int com_facebook_logo=0x7f02000f;
-        public static final int com_facebook_picker_default_separator_color=0x7f020029;
+        public static final int com_facebook_picker_default_separator_color=0x7f02002b;
         public static final int com_facebook_picker_item_background=0x7f020010;
         public static final int com_facebook_picker_list_focused=0x7f020011;
         public static final int com_facebook_picker_list_longpressed=0x7f020012;
@@ -240,9 +240,11 @@ containing a value of this type.
         public static final int com_facebook_top_button=0x7f020026;
         public static final int com_facebook_usersettingsfragment_background_gradient=0x7f020027;
         public static final int ic_launcher=0x7f020028;
+        public static final int logo=0x7f020029;
+        public static final int logon_status_background=0x7f02002a;
     }
     public static final class id {
-        public static final int action_settings=0x7f04001e;
+        public static final int action_settings=0x7f04001f;
         public static final int com_facebook_body_frame=0x7f040016;
         public static final int com_facebook_button_xout=0x7f040018;
         public static final int com_facebook_login_activity_progress_bar=0x7f040006;
@@ -270,6 +272,7 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f04001c;
         public static final int fragment_container=0x7f040003;
         public static final int large=0x7f040002;
+        public static final int logon_status_tv=0x7f04001e;
         public static final int normal=0x7f040001;
         public static final int picker_subtitle=0x7f040013;
         public static final int small=0x7f040000;
@@ -299,6 +302,7 @@ containing a value of this type.
     public static final class string {
         public static final int action_settings=0x7f07001c;
         public static final int app_name=0x7f07001b;
+        public static final int attempting_logon=0x7f070020;
         public static final int com_facebook_choose_friends=0x7f07000f;
         public static final int com_facebook_dialogloginactivity_ok_button=0x7f070000;
         public static final int com_facebook_internet_permission_error_message=0x7f070013;
@@ -327,6 +331,10 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_not_logged_in=0x7f07000a;
         public static final int facebook_app_id=0x7f07001a;
         public static final int hello_world=0x7f07001d;
+        public static final int logo_description=0x7f07001e;
+        public static final int logon_failed=0x7f070022;
+        public static final int logon_status_placeholder=0x7f07001f;
+        public static final int logon_successful=0x7f070021;
     }
     public static final class style {
         /** 

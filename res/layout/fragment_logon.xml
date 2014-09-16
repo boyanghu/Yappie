@@ -3,7 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" 
-    android:background="@color/primary_background">
+    android:background="@color/primary_background"
+    android:gravity="center">
     
+    <ImageView 
+        android:src="@drawable/logo"
+        android:contentDescription="@string/logo_description"
+        android:layout_width="160dp"
+        android:layout_height="160dp" 
+        android:layout_gravity="center_horizontal"/>
+    
+    <com.bo.yang.hu.yappie.ui.CustomTextView
+        android:id="@+id/logon_status_tv"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="@string/logon_status_placeholder"
+        android:gravity="center"
+        android:padding="30sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/logon_status_background"/>
 
 </LinearLayout>
